@@ -1,1 +1,1 @@
-# arturium-browser
+# Arturium Browser это простой браузер на PyQt5 и Bash
