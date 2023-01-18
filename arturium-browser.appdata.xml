@@ -9,19 +9,19 @@
   <project_license>GPL-3.1</project_license>
   <screenshots>
     <screenshot type="default">
-      <image type="source" width="512" height="512">/opt/arturium-browser/arturium.png</image>
+      <image type="source" width="512" height="512">arturium-browser/arturium.png</image>
     </screenshot>
   </screenshots>
   <description>
     <p>Arturium Browser</p>
-    <p>Arturium Browser is NOT associated with Google or its products.</p>
+    <p>Arturium Browser is NOT associated with Google, Inc or its products.</p>
     <p>Features:</p>
     <ul>
       <li>And much more…</li>
     </ul>
   </description>
   <releases>
-    <release version="0.286-7" date="2023-01-03"/>
+    <release version="0.286-7" date="2023-01-18"/>
   </releases>
   <keywords>
     <keyword>arturium-browser</keyword>
