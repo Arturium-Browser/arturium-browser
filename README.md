@@ -2,6 +2,7 @@
 Releases in folder releases/{rpm,deb,appimage} (available only on linux)
 
 It's not just my code that's being used here (see AUTHORS file)
+To run, you need to install the dependencies from requirements.txt
 
 
 (Under development)
