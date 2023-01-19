@@ -9,11 +9,11 @@ NAME=arturium-browser
 RM = rm -f
 DIR = ../$(NAME)
 
+all: release
 release32: CXX_FLAGS += -m32
 release32: LD_FLAGS += -m32
 release: library
 release32: release
-all: release
 
 library: $(FNAME)
 
