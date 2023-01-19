@@ -1,5 +1,5 @@
 # Arturium Browser a simple browser in PyQt5 и Bash
-Releases, available only on linux
+Releases are available only for Linux
 
 To run, you need to install the dependencies from requirements.txt and python-3.7 or a higher version. 
  I uses someone else's code distributed under a free license (for details see AUTHORS file)
