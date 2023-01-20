@@ -5,6 +5,4 @@ To run, you need to install the dependencies from [requirements.txt](requirement
 I uses someone else's code distributed under a free license (for details see [AUTHORS](AUTHORS) file).
 This code is distributed under a license GNU Generic Public License v3.0
 
-# 
-@development
- а также
+#
