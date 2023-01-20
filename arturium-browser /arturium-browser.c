@@ -5,7 +5,7 @@
 #include <Windows.h>
 int main(void)
 {
-    char * const run[] = {"python3 C:/Program Files/Arturium Browser/resources/plugin.py"};
+    char * const run[] = {"python C:/Program Files/Arturium Browser/resources/plugin.py"};
 
     return system(run[0]);
     exit(EXIT_SUCCESS);
