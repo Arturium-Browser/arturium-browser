@@ -1,8 +1,8 @@
 .DEFAULT_GOAL := all
 
 CC=gcc
-CXX_FLAGS += $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME)
-LD_FLAGS += -lc -ldl
+CXX_FLAGS += $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -fPIC
+LD_FLAGS += -lc -ldl -lpthread
 FNAME="Arturium Browser"
 NAME=arturium-browser
 
