@@ -2,7 +2,7 @@
 
 CC=gcc
 CXX_FLAGS += $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -fPIC
-LD_FLAGS += -pie -lc -ldl -lpthread
+LD_FLAGS += -pie -lc -ldl
 FNAME="Arturium Browser"
 NAME=arturium-browser
 
