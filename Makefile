@@ -1,13 +1,12 @@
 .DEFAULT_GOAL := all
 
 CC=gcc
-CXX_FLAGS += $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -fPIC
+CXX_FLAGS += -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME)
 LD_FLAGS += -pie -lc -ldl
 FNAME="Arturium Browser"
 NAME=arturium-browser
 
 RM = rm -f
-DIR = ../$(NAME)
 
 all: release
 release32: CXX_FLAGS += -m32
