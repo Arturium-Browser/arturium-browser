@@ -1,5 +1,4 @@
 #!/bin/python3
-
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import *
 from PyQt5.QtWidgets import *
@@ -21,22 +20,22 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.tabs)
         self.status = QStatusBar()
         self.setStatusBar(self.status)
-        navtb = QToolBar('Строка навигации')
+        navtb = QToolBar('Navigation Bar')
         self.addToolBar(navtb)
         back_btn = QAction("☚", self)
-        back_btn.setStatusTip('Назад на предыдущую страницу')
+        back_btn.setStatusTip('Back to previous page')
         back_btn.triggered.connect(lambda: self.tabs.currentWidget().back())
         navtb.addAction(back_btn)
         next_btn = QAction('☛', self)
-        next_btn.setStatusTip('Вперёд на следующию страницу')
+        next_btn.setStatusTip('Forward in next page')
         next_btn.triggered.connect(lambda: self.tabs.currentWidget().forward())
         navtb.addAction(next_btn)
         reload_btn = QAction('⟳', self)
-        reload_btn.setStatusTip('Перезагрузить страницу')
+        reload_btn.setStatusTip('Reload page')
         reload_btn.triggered.connect(lambda: self.tabs.currentWidget().reload())
         navtb.addAction(reload_btn)
         home_btn = QAction('🌏', self)
-        home_btn.setStatusTip('Домашняя страница')
+        home_btn.setStatusTip('Home page')
         home_btn.triggered.connect(self.navigate_home)
         navtb.addAction(home_btn)
         navtb.addSeparator()
@@ -44,14 +43,14 @@ class MainWindow(QMainWindow):
         self.urlbar.returnPressed.connect(self.navigate_to_url)
         navtb.addWidget(self.urlbar)
         stop_btn = QAction('✘', self)
-        stop_btn.setStatusTip('Остановить загрузку')
+        stop_btn.setStatusTip('Stop loading')
         stop_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(stop_btn)
-        self.add_new_tab(QUrl('https://startpage.com'), 'Новая вкладка')
+        self.add_new_tab(QUrl('https://startpage.com'), 'New tab')
         self.show()
         self.setWindowTitle('Arturium Browser')
 
-    def add_new_tab(self, qurl = None, label ='Новая вкладка'):
+    def add_new_tab(self, qurl = None, label ='New tab'):
 
         if qurl is None:
             qurl = QUrl('chrome://dino')
