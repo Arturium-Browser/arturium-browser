@@ -1,12 +1,11 @@
 .DEFAULT_GOAL := all
 
-CC=gcc
 CCX_FLAGS += -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME)
 LD_FLAGS += -pie -lc -ldl
 FNAME="Arturium Browser"
 NAME=arturium-browser
-
 RM = rm -f
+CC=gcc
 
 all: release
 release: library
