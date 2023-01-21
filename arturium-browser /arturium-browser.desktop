@@ -2,7 +2,7 @@
 Categories=Network;WebBrowser;
 Comment[ru_RU]=
 Comment=
-Exec=/bin/arturium-browser
+Exec=/opt/arturium-browser/Arturium Browser
 GenericName[ru_RU]=Web Browser
 GenericName=Web Browser
 Icon=arturium
