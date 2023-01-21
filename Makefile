@@ -26,7 +26,7 @@ $(FNAME):
 	
 install:
 	mkdir -p /opt/$(NAME)/resources
-	cp -r $(FNAME)/* /opt/$(FNAME)
+	cp -r $(FNAME)/* /opt/$(NAME)
 	cp $(FNAME)/$(NAME).desktop /usr/share/applications
 	cp $(FNAME)/$(NAME).png /usr/share/icons/hicolor/256x256/apps
 
