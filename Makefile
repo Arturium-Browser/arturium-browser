@@ -1,30 +1,23 @@
 .DEFAULT_GOAL := all
 
-CC_FLAGS += -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME)
-LD_FLAGS += -pie -lc
 FNAME=Arturium_Browser
 NAME=arturium-browser
+MK = mkdir -p
 RM = rm -f
 
-all: release
-release: library
-release32: release
-release32: CC_FLAGS += -m32
-release32: LD_FLAGS += -m32
-
-library: $(FNAME)
-
+all: $(FNAME)
 $(FNAME):
-	mkdir -p ./$(FNAME)/resources
+	$(MK) ./$(FNAME)/resources
 	cp $(NAME)/* $(FNAME)
 	cp build_info.json $(FNAME)/resources
 	cp $(NAME)/plugin.py $(FNAME)/resources
-	$(CC) $(CC_FLAGS) $(LD_FLAGS)
+	$(CC) -pie -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -lc
+	$(CC) -shared -fPIC $(NAME)/chromedriver.c -o $(FNAME)/chromedriver -lc
 	strip $(FNAME)/$(FNAME)
 	$(RM) $(FNAME)/$(NAME).c $(FNAME)/plugin.py
-	
+
 install:
-	mkdir -p /opt/$(NAME)/resources
+	$(MK) /opt/$(NAME)/resources
 	cp -r $(FNAME)/* /opt/$(NAME)
 	cp $(FNAME)/$(NAME).desktop /usr/share/applications
 	cp $(FNAME)/$(NAME).png /usr/share/icons/hicolor/256x256/apps
@@ -32,3 +25,9 @@ install:
 
 clean:
 	$(RM) $(FNAME)
+
+remove:
+	$(RM) /opt/$(NAME)
+	$(RM) /usr/share/applications/$(NAME).desktop
+	$(RM) /usr/share/icons/hicolor/256x256/apps/$(NAME).png
+	$(RM) /usr/bin/$(NAME)
