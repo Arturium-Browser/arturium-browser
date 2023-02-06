@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import sys
 import os
-#
+
 class MainWindow(QMainWindow):
 
     def __init__(self, *args, **kwargs):
@@ -51,7 +51,6 @@ class MainWindow(QMainWindow):
         self.setWindowTitle('Arturium Browser')
 
     def add_new_tab(self, qurl = None, label ='New tab'):
-
         if qurl is None:
             qurl = QUrl('chrome://dino')
         browser = QWebEngineView()
@@ -65,7 +64,6 @@ class MainWindow(QMainWindow):
                                      self.tabs.setTabText(i, browser.page().title()))
  
     def tab_open_doubleclick(self, i):
- 
         if i == -1:
             self.add_new_tab()
 
@@ -75,31 +73,26 @@ class MainWindow(QMainWindow):
         self.update_title(self.tabs.currentWidget())
 
     def close_current_tab(self, i):
-
         if self.tabs.count() < 2:
             return
         self.tabs.removeTab(i)
 
     def update_title(self, browser):
-    
         if browser != self.tabs.currentWidget():
             return
         title = self.tabs.currentWidget().page().title()
         self.setWindowTitle('% s - Arturium Browser' % title)
 
     def navigate_home(self):
-
         self.tabs.currentWidget().setUrl(QUrl('https://startpage.com'))
 
     def navigate_to_url(self):
-
         q = QUrl(self.urlbar.text())
         if q.scheme() == "":
             q.setScheme('https')
         self.tabs.currentWidget().setUrl(q)
 
     def update_urlbar(self, q, browser = None):
-
         if browser != self.tabs.currentWidget():
  
             return
