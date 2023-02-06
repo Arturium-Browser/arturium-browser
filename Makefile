@@ -2,7 +2,7 @@
 
 CCX_FLAGS += -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME)
 LD_FLAGS += -pie -lc -ldl
-FNAME="Arturium Browser"
+FNAME=Arturium_Browser
 NAME=arturium-browser
 RM = rm -f
 CC=gcc
@@ -29,6 +29,7 @@ install:
 	cp -r $(FNAME)/* /opt/$(NAME)
 	cp $(FNAME)/$(NAME).desktop /usr/share/applications
 	cp $(FNAME)/$(NAME).png /usr/share/icons/hicolor/256x256/apps
+	ln -s /opt/$(NAME)/AppRun /usr/bin/$(NAME)
 
 clean:
 	$(RM) $(FNAME)
