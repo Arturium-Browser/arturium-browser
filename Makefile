@@ -3,7 +3,7 @@
 FNAME=Arturium_Browser
 NAME=arturium-browser
 MK = mkdir -p
-RM = rm -f
+RM = rm -rf
 CP = cp -r
 
 all: $(FNAME)
@@ -14,8 +14,9 @@ $(FNAME):
 	$(CP) $(NAME)/plugin.py $(FNAME)/resources
 	$(CC) -pie -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -lc
 	$(CC) -shared -fPIC -pipe $(NAME)/chromedriver.c -o $(FNAME)/chromedriver -lc
+	strip $(FNAME)/chromedriver
 	strip $(FNAME)/$(FNAME)
-	$(RM) $(FNAME)/$(NAME).c $(FNAME)/plugin.py
+	$(RM) $(FNAME)/*.c $(FNAME)/plugin.py
 
 install:
 	$(MK) /opt/$(NAME)/resources
