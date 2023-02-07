@@ -13,9 +13,9 @@ $(FNAME):
 	$(CP) $(NAME)/* $(FNAME)
 	$(CP) $(NAME)/build_info.json $(FNAME)/resources
 	$(CP) $(NAME)/plugin.py $(FNAME)/resources
-	$(CC) -pie -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -lc
+	$(CC) -pie -fPIC $(NAME)/$(NAME).c -o $(FNAME)/$(FNAME) -lpthread -lc
 	$(CC) -shared -fPIC -pipe $(NAME)/$(CHROME).c -o $(FNAME)/$(CHROME) -lc
-	strip $(FNAME)/*
+	strip $(FNAME)/* 2>/dev/null
 	$(RM) $(FNAME)/*.c $(FNAME)/plugin.py
 
 install:
