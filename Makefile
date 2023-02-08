@@ -2,8 +2,8 @@
 
 FNAME=Arturium_Browser
 NAME=arturium-browser
-CHROME=chromedriver
 CC_FLAGS = -fPIC -lc
+CHROME=chromedriver
 MK = mkdir -p
 RM = rm -rf
 CP = cp -r
