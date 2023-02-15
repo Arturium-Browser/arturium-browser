@@ -2,7 +2,7 @@
 
 FNAME=Arturium_Browser
 NAME=arturium-browser
-CC_FLAGS = -fPIC -lc
+CC_FLAGS = -fPIC -Wall
 CHROME=chromedriver
 MK = mkdir -p
 RM = rm -rf
